@@ -1,5 +1,9 @@
 
+using OneToMany.Repository.CarRepository;
+using OneToMany.Repository.PersonRepository;
 using OneToMany.Server.Configurations;
+using OneToMany.Service.CarService;
+using OneToMany.Service.PersonService;
 
 namespace OneToMany.Server
 {
@@ -18,6 +22,12 @@ namespace OneToMany.Server
 
             // Db configuration
             builder.ConfigureDatabase();
+
+            // Dependecy injection
+            builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+            builder.Services.AddScoped<IPersonService, PersonService>();
+            builder.Services.AddScoped<ICarRepository, CarRepository>();
+            builder.Services.AddScoped<ICarService, CarService>();
 
             var app = builder.Build();
 
