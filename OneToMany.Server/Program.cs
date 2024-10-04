@@ -1,4 +1,6 @@
 
+using OneToMany.Server.Configurations;
+
 namespace OneToMany.Server
 {
     public class Program
@@ -13,6 +15,9 @@ namespace OneToMany.Server
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            // Db configuration
+            builder.ConfigureDatabase();
 
             var app = builder.Build();
 
