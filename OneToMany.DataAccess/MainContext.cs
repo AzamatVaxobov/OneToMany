@@ -7,6 +7,7 @@ public class MainContext : DbContext
 {
     public DbSet<Person> People { get; set; }
     public DbSet<Car> Cars { get; set; }
+    public DbSet<Logs> Logs { get; set; }
 
     public MainContext(DbContextOptions<MainContext> options) : base(options) { }
 
@@ -14,4 +15,5 @@ public class MainContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
     }
+
 }

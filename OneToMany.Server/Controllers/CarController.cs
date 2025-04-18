@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OneToMany.DataAccess.Entites;
 using OneToMany.Service.CarService;
 using OneToMany.Service.DTOs;
 
@@ -42,5 +43,6 @@ namespace OneToMany.Server.Controllers
             var car = _carService.GetCarById(carId);
             return car;
         }
+        
     }
 }

@@ -18,7 +18,7 @@ namespace OneToMany.Repository.CarRepository
         }
 
         // Method to add a new car
-        public long PostCar(Car car)
+        public long InsertCar(Car car)
         {
             _context.Cars.Add(car);
             _context.SaveChanges();

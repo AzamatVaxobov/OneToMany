@@ -23,7 +23,7 @@ namespace OneToMany.Service.CarService
                 PersonId = carCreateDto.PersonId // Set the foreign key
             };
 
-            return _carRepository.PostCar(car);
+            return _carRepository.InsertCar(car);
         }
 
         public ICollection<CarDto> GetAllCars()

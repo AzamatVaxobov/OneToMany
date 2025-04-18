@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OneToMany.DataAccess.Entites;
 using OneToMany.Service.DTOs;
 using OneToMany.Service.PersonService;
 
 namespace OneToMany.Server.Controllers
 {
-   
+
     [Route("api/[controller]")]
     [ApiController]
     public class PersonController : ControllerBase
@@ -42,6 +43,20 @@ namespace OneToMany.Server.Controllers
             var person = _personService.GetPersonById(personId);
             return person;
         }
+        [HttpPut]
+        public void UpdatePerson(PersonDto personDto)
+        {
+            var person = new Person
+            {
+                Id = personDto.Id,
+                FirstName = personDto.FirstName,
+                LastName = personDto.LastName
+                // Add other properties if needed
+            };
+
+            _personService.UpdatePerson(personDto);
+        }
+
     }
 }
 
